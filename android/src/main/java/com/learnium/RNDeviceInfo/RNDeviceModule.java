@@ -1067,7 +1067,7 @@ public class RNDeviceModule extends ReactContextBaseJavaModule {
   @SuppressLint("UnspecifiedRegisterReceiverFlag")
   private void registerReceiver(Context context, BroadcastReceiver receiver, IntentFilter filter) {
     if (Build.VERSION.SDK_INT >= 34 && context.getApplicationInfo().targetSdkVersion >= 34) {
-      context.registerReceiver(receiver, filter, Context.RECEIVER_NOT_EXPORTED);
+      context.registerReceiver(receiver, filter);
     } else {
       context.registerReceiver(receiver, filter);
     }
